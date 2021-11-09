@@ -13,6 +13,7 @@ form.addEventListener('submit', function(event) {
 });
 
 //Set variables for each checkbox
+const sandwichCreate = document.querySelector('#sandwich');
 const inputText2 = document.querySelector('#input-text2')
 const wholeWheat = document.querySelector('#whole-wheat')
 const white = document.querySelector('#white')
@@ -26,7 +27,7 @@ const cheddarCheese = document.querySelector('#cheddar-cheese')
 const provoloneCheese = document.querySelector('#provolone-cheese')
 
 //Takes input to create sandwich
-form.addEventListener('submit', function(event) {
+sandwichCreate.addEventListener('submit', function(event) {
      event.preventDefault();
 
      let str = 
@@ -71,13 +72,13 @@ form.addEventListener('submit', function(event) {
     });
 
     //Haircut Scheduling
-
+    const haircut = document.querySelector('#haircut');
     const inputDateTime = document.querySelector('#input-datetime');
     const stylist = document.querySelector('#input-stylist');
     const inputLong = document.querySelector('#radio-long');
     const inputShort = document.querySelector('#radio-short');
 
-    form.addEventListener('submit', function(event) {
+    haircut.addEventListener('submit', function(event) {
         event.preventDefault();
 
         let str = 
@@ -98,4 +99,24 @@ form.addEventListener('submit', function(event) {
     });
 
     //Create account
+    const account = document.querySelector('#account');
+    const user = document.querySelector('#input-username');
+    const email = document.querySelector('#input-email');
+    const password = document.querySelector('#input-password');
+    const confirmPassword = document.querySelector('#confirm-password');
 
+    account.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        let str = 
+        'Account created! Username: ' +
+        user.value + ' ' +
+        'Email: ' + ' ' +
+        email.value;
+
+        if(password.value == confirmPassword.value) {
+            alert(str);
+        } else {
+            alert('Passwords do not match!')
+        }
+    })
